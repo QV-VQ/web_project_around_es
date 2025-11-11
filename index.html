@@ -69,8 +69,7 @@
               maxlength="200" placeholder="About me" required>
             <span id="popup-input-description-error" class="popup__span-error"></span>
           </fieldset>
-          <button type="submit" class="button popup__button-submit" id="popup-button-profile-submit"
-            disabled>Save</button>
+          <button type="submit" class="button popup__button-submit" id="popup-button-profile-submit">Save</button>
         </form>
       </aside>
       <aside id="add-place-popup" class="popup popup_hidden">
@@ -81,12 +80,11 @@
             <input type="text" class="popup__input" id="popup-input-title" name="edit-name" placeholder="Title"
               minlength="2" maxlength="30" required>
             <span id="popup-input-title-error" class="popup__span-error"></span>
-            <input type="text" class="popup__input" id="form-img-src" name="edit-description" pattern="https://.*"
+            <input type="url" class="popup__input" id="form-img-src" name="edit-description" pattern="https://.*"
               placeholder="Image link" required>
             <span id="form-img-src-error" class="popup__span-error"></span>
           </fieldset>
-          <button type="submit" class="button popup__button-submit" id="popup-button-place-submit"
-            disabled>Create</button>
+          <button type="submit" class="button popup__button-submit" id="popup-button-place-submit">Create</button>
         </form>
       </aside>
       <aside id="popup__img-zoom" class="popup popup_hidden">
@@ -116,7 +114,9 @@
           target="_blank">FDSC</a></p>
     </footer>
   </div>
-  <script src="./scripts/validate.js"></script>
+  <script src="./scripts/Card.js"></script>
+  <script src="./scripts/FormValidator.js"></script>
+  <script src="./scripts/utils.js"></script>
   <script src="./scripts/index.js"></script>
 </body>
 </html>
