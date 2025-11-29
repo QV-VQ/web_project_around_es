@@ -26,4 +26,4 @@ The project follows the BEM methodology for CSS file organization:
 
 📸 Live Demo Experience the live version here
 
-https://qv-vq.github.io/web_project_around/
+https://qv-vq.github.io/web_project_around_es/
