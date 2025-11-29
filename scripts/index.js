@@ -44,8 +44,8 @@ const articlesContainer = document.querySelector('.articles');
 const editProfilePopup = document.querySelector('#edit-profile-popup');
 const addCardPopup = document.querySelector('#add-place-popup');
 const imagePopup = document.querySelector('#popup__img-zoom');
-const editProfileForm = document.forms['edit-form'];
-const addCardForm = document.forms['edit-form'];
+const editProfileForm = document.querySelector('#form-profile');
+const addCardForm = document.querySelector('#form-place');
 const nameInput = document.querySelector('#popup-input-name');
 const aboutInput = document.querySelector('#popup-input-description');
 const cardTitleInput = document.querySelector('#popup-input-title');
@@ -56,6 +56,32 @@ const popups = document.querySelectorAll('.popup');
 // Form Validators
 const editFormValidator = new FormValidator(config, editProfileForm);
 const addCardFormValidator = new FormValidator(config, addCardForm);
+
+// Utility Functions
+function openPopup(popupElement) {
+  popupElement.classList.remove('popup_hidden');
+  document.addEventListener('keydown', handleEscapeKey);
+}
+
+function closePopup(popupElement) {
+  popupElement.classList.add('popup_hidden');
+  document.removeEventListener('keydown', handleEscapeKey);
+}
+
+function handleEscapeKey(evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup:not(.popup_hidden)');
+    if (openedPopup) {
+      closePopup(openedPopup);
+    }
+  }
+}
+
+function handleOverlayClick(evt) {
+  if (evt.target.classList.contains('popup')) {
+    closePopup(evt.target);
+  }
+}
 
 // Card Management
 function handleCardLike(card) {

@@ -6,14 +6,17 @@ class Card {
     this._handleCardClick = handleCardClick;
     this._handleDeleteClick = handleDeleteClick;
     this._handleLikeClick = handleLikeClick;
+    this._isLiked = false;
   }
 
   _getTemplate() {
-    return document
+    const cardElement = document
       .querySelector(this._templateSelector)
       .content
       .querySelector('.card')
       .cloneNode(true);
+    
+    return cardElement;
   }
 
   _setEventListeners() {

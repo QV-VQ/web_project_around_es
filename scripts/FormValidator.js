@@ -69,4 +69,9 @@ class FormValidator {
       this._hideInputError(inputElement);
     });
   }
+
+  // Public method 
+  setEventListeners() {
+    this._setEventListeners();
+  }
 }
